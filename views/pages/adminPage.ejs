@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<header>
+    <%- include('../partials/header') %>
+</header>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class = col-md-5>
+            <h3>Welcome Admin!</h3>
+            <div class="login-container">
+                <h3 class="login-heading">REGISTER USER</h3>
+                <form action="/register" method="post" class="form-group login-form">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" name="username" aria-label="Username" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                    </div>
+                        <select class="custom-select"name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="guest">Guest</option>
+                            <option value="ordinary">Ordinary</option>
+                        </select>
+                    <input type="submit" class ="login-submit btn btn-primary" value="Register">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="login-container">
+                <h3 class="login-heading">DELETE USER</h3>
+                <form action="/delete" method="post" class="form-group login-form">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" name="username" aria-label="Username" aria-describedby="basic-addon1" required>
+                    </div>
+
+                    <input type="submit" class ="login-submit btn btn-primary" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    <%- include('../partials/footer') %>
+</footer>
+</html>
